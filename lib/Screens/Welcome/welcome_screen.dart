@@ -1,3 +1,4 @@
+import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -6,22 +7,26 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: const BoxConstraints.expand(),
       decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/welcome_background.jpg"),
-              fit: BoxFit.cover)),
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [kBGColor, kPrimaryLightColor])),
       child: Scaffold(
-        backgroundColor: Colors.transparent,
-      ),
-      // body: Column(
-      //   children: [
-      //     const TextField(
-      //         decoration:
-      //             InputDecoration(fillColor: Colors.amber, filled: true)
-      //     ),
-      //   ],
-      // ),
+          backgroundColor: Colors.transparent,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            title: Center(
+              child: Text("welcome to find my doctor"),
+            ),
+          ),
+          body: Center(
+            child: Container(
+              width: 200,
+              height: 200,
+              color: Colors.white,
+            ),
+          )),
     );
   }
 }
