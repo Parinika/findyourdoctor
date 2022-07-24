@@ -32,27 +32,33 @@ class WelcomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Image.asset(
-                    'assests/images/doctor.png',
+                    'assests/images/logo.jpg',
                     // height: 300.0,
                     // width: 300.0,
                     scale: 8.0,
                     // final AlignmentGeometry alignment(-1.0,0.0);
                   ),
-                  Container(
-                    margin: EdgeInsets.all(50),
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Search Without Login',
-                          style: TextStyle(fontSize: 20.0),
+                  Center(
+                      child: Container(
+                        margin: EdgeInsets.only(top: 20),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(
+                            'Search Without Login',
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                            primary: kBGColor,
+                            onPrimary: kPrimaryLightColor,
+                            elevation: 2,
+                            shape: (RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                              side: BorderSide(color: kPrimaryColor)))
+                              // shape: ButtonStyleButton(),
+                              // alignment:Alignment.Center,
+                          ),
                         ),
-                        style: ElevatedButton.styleFrom(
-                          primary: kBGColor,
-                          onPrimary: kPrimaryLightColor,
-                          elevation: 2,
-                          // shape: ButtonStyleButton(),
-                          // alignment:Alignment.Center,
-                        )),
+                      )
                   )
                 ]),
             //child: TextButton(onPressed: (){},child: Text('Button'),),
