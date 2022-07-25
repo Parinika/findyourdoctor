@@ -13,12 +13,12 @@ class WelcomeScreen extends StatelessWidget {
       decoration: const BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
+              end: Alignment.bottomLeft,
               colors: [kBGColor, kPrimaryLightColor])),
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
+            //backgroundColor: Colors.transparent,
             title: Center(
               child: Text("Welcome to Find my Doctor",
                   style: TextStyle(
@@ -27,41 +27,97 @@ class WelcomeScreen extends StatelessWidget {
           ),
           body: Center(
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   Image.asset(
                     'assests/images/logo.jpg',
-                    // height: 300.0,
-                    // width: 300.0,
                     scale: 8.0,
-                    // final AlignmentGeometry alignment(-1.0,0.0);
+                    width: MediaQuery.of(context).size.width,
                   ),
-                  Center(
-                      child: Container(
-                        margin: EdgeInsets.only(top: 20),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Search Without Login',
-                            style: TextStyle(fontSize: 20.0),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: kBGColor,
-                            onPrimary: kPrimaryLightColor,
-                            elevation: 2,
-                            shape: (RoundedRectangleBorder(
+                  Spacer(flex: 13),
+                  ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: kBGColor,
+                          onPrimary: kPrimaryLightColor,
+                          fixedSize: const Size(250, 40),
+                          elevation: 2,
+                          shape: (RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),
-                              side: BorderSide(color: kPrimaryColor)))
-                              // shape: ButtonStyleButton(),
-                              // alignment:Alignment.Center,
-                          ),
-                        ),
-                      )
-                  )
+                              side: BorderSide(color: kPrimaryColor)))),
+                      child: Text(
+                        'Search Without Login',
+                        style: TextStyle(fontSize: 20.0),
+                      )),
+                  Spacer(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Spacer(flex: 2),
+                      Expanded(
+                        flex: 6,
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                primary: kBGColor,
+                                onPrimary: kPrimaryLightColor,
+                                fixedSize: const Size(50, 40),
+                                //padding: const EdgeInsets.symmetric(vertical: 12),
+                                elevation: 2,
+                                shape: (RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    side: BorderSide(color: kPrimaryColor)))),
+                            child: Text(
+                              'Login',
+                              style: TextStyle(fontSize: 20.0),
+                            )),
+                      ),
+                      Spacer(),
+                      Expanded(
+                        flex: 7,
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                primary: kBGColor,
+                                onPrimary: kPrimaryLightColor,
+                                fixedSize: const Size(50, 40),
+                                // padding: const EdgeInsets.symmetric( vertical: 12),
+                                elevation: 2,
+                                shape: (RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    side: BorderSide(color: kPrimaryColor)))),
+                            child: Text(
+                              'SignUp',
+                              style: TextStyle(fontSize: 20.0),
+                            )),
+                      ),
+                      Spacer(flex: 2),
+                    ],
+                  ),
+                  Spacer(),
+                  // Center(
+                  //     child: Container(
+                  //       margin: EdgeInsets.only(top: 20),
+                  //       child: ElevatedButton(
+                  //         onPressed: () {},
+                  //         child: Text(
+                  //           'Search Without Login',
+                  //           style: TextStyle(fontSize: 20.0),
+                  //         ),
+                  //         style: ElevatedButton.styleFrom(
+                  //           primary: kBGColor,
+                  //           onPrimary: kPrimaryLightColor,
+                  //           elevation: 2,
+                  //           shape: (RoundedRectangleBorder(
+                  //             borderRadius: BorderRadius.circular(10.0),
+                  //             side: BorderSide(color: kPrimaryColor)))
+                  //         ),
+                  //       ),
+                  //     )
+                  // )
                 ]),
-            //child: TextButton(onPressed: (){},child: Text('Button'),),
           )),
     );
   }
