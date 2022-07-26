@@ -36,34 +36,6 @@ class LoginScreen extends StatelessWidget {
             //     style: TextStyle(color: Colors.white, fontSize: 33),
             //   ),
             // )
-            Container(
-              //acc to screen size
-              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.5, right:35, left:35),
-              child: Column(
-                children: [
-                  TextField(
-                    decoration: InputDecoration(
-                      fillColor: Colors.grey.shade100,
-                      filled: true,
-                      hintText: 'Email',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)
-                      )
-                    ),
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      fillColor: Colors.grey.shade100,
-                      filled: true,
-                      hintText: 'Password',
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10)
-                      )
-                    ),
-                  ),
-                ],
-              ),
-            )
           ],
         ),
       ),
