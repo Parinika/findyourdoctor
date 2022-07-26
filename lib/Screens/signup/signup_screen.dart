@@ -28,8 +28,16 @@ class SignupScreen extends StatelessWidget {
               constraints: BoxConstraints.expand(width: 80),
               icon: Text('Skip', textAlign: TextAlign.center),
               onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                // Navigator.of(context).push(
+                //     MaterialPageRoute(builder: (context) => HomeScreen()));
+                Navigator.pushReplacement(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation1, animation2) =>
+                          HomeScreen(),
+                      transitionDuration: Duration.zero,
+                      reverseTransitionDuration: Duration.zero,
+                    ));
               },
             ),
           ],

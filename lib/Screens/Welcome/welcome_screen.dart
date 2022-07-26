@@ -19,16 +19,17 @@ class WelcomeScreen extends StatelessWidget {
               end: Alignment.bottomLeft,
               colors: [kBGColor, lightBG])),
       child: Scaffold(
-        // extendBodyBehindAppBar: true,
+          // extendBodyBehindAppBar: true,
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 10,
             centerTitle: true,
             title: /*Center(
-              child:*/ Text("Welcome to Find my Doctor",
-                  style: TextStyle(
-                      fontFamily: 'Open Sans', fontWeight: FontWeight.bold)),
+              child:*/
+                Text("Welcome to Find my Doctor",
+                    style: TextStyle(
+                        fontFamily: 'Open Sans', fontWeight: FontWeight.bold)),
             // ),
           ),
           body: Center(
@@ -45,7 +46,8 @@ class WelcomeScreen extends StatelessWidget {
                   Spacer(flex: 13),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>HomeScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => HomeScreen()));
                       },
                       style: ElevatedButton.styleFrom(
                           primary: kBGColor,
@@ -68,7 +70,16 @@ class WelcomeScreen extends StatelessWidget {
                         flex: 6,
                         child: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginScreen()));
+                              // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginScreen()));
+                              Navigator.pushReplacement(
+                                  context,
+                                  PageRouteBuilder(
+                                    pageBuilder:
+                                        (context, animation1, animation2) =>
+                                            LoginScreen(),
+                                    transitionDuration: Duration.zero,
+                                    reverseTransitionDuration: Duration.zero,
+                                  ));
                             },
                             style: ElevatedButton.styleFrom(
                                 primary: kBGColor,
@@ -89,7 +100,17 @@ class WelcomeScreen extends StatelessWidget {
                         flex: 6,
                         child: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignupScreen()));
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (context) => SignupScreen()));
+                                  Navigator.pushReplacement(
+                                  context,
+                                  PageRouteBuilder(
+                                    pageBuilder:
+                                        (context, animation1, animation2) =>
+                                            SignupScreen(),
+                                    transitionDuration: Duration.zero,
+                                    reverseTransitionDuration: Duration.zero,
+                                  ));
                             },
                             style: ElevatedButton.styleFrom(
                                 primary: kBGColor,
