@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
           scale: 5.0,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(20.0)),
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(10.0)),
         ),
         // child: Text("Welcome to Find my Doctor",
         //     style: TextStyle(
