@@ -1,13 +1,12 @@
 import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget{
-  const LoginScreen({Key? key}) : super(key: key);
+class SignupScreen extends StatelessWidget{
+  const SignupScreen({Key? key}) : super(key: key);
 
    @override
   Widget build(BuildContext context) {
     return Container(
-      
       child: Scaffold(
         backgroundColor: lightBG,
           appBar: AppBar(
@@ -22,25 +21,39 @@ class LoginScreen extends StatelessWidget{
             Container(
               // decoration: BoxDecoration(
               //   image: DecorationImage(
-              //     image: AssetImage('assests/images/loginbg1.png'),
+              //     image: AssetImage('assests/images/loginbg2.png'),
               //     fit: BoxFit.fill,
-              //   ),
+              //   )
               // ),
               //padding is use to place the text on specific position
               //change the values using hit n trial method
-              padding: EdgeInsets.only(left: 130, top:150),
-              child: Text('Sign in', style: TextStyle(
+              padding: EdgeInsets.only(left: 110, top:135),
+              child: Text('Create Account', style: TextStyle(
                 color: kBGColor,
-                fontSize: 33
+                fontSize: 25
               ),
               ),
             ),
             Container(
               //acc to screen size
               padding: EdgeInsets.only(
-                top: MediaQuery.of(context).size.height*0.3, right:35, left:35),
+                top: MediaQuery.of(context).size.height*0.25, right:35, left:35),
               child: Column(
                 children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      fillColor: lightBG,
+                      filled: true,
+                      hintText: 'Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10)
+                      )
+                    ),
+                  ),
+                  //gap between two
+                  SizedBox(
+                    height: 15,
+                  ),
                   TextField(
                     decoration: InputDecoration(
                       fillColor: lightBG,
@@ -92,25 +105,7 @@ class LoginScreen extends StatelessWidget{
                     ],
                    
                   ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Row(
-                    children: [
-                      TextButton(onPressed: (){
-                         Navigator.pushNamed(context, 'SignUp');
-                      }, 
-                      child: Text(
-                        'New User? Sign up', 
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          color: kBGColor,
-                          fontSize: 15,
-                       ),
-                       )
-                       )
-                    ],
-                  )
+                 
                 ],
               ),
             )
