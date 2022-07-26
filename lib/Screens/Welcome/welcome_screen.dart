@@ -1,10 +1,7 @@
 //<a href="https://lovepik.com/images/png-doctor-cartoon.html">Doctor Cartoon Png vectors by Lovepik.com</a>
 import 'package:findyourdoctor/Screens/home/home_screen.dart';
 import 'package:findyourdoctor/Screens/login/login_screen.dart';
-<<<<<<< HEAD
 import 'package:findyourdoctor/Screens/signin/signup_screen.dart';
-=======
->>>>>>> 46507ddd9ad1a1c80e14826f67692b7652ae66f7
 import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 
