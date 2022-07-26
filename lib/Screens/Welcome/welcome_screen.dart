@@ -23,11 +23,12 @@ class WelcomeScreen extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             elevation: 10,
-            title: Center(
-              child: Text("Welcome to Find my Doctor",
+            centerTitle: true,
+            title: /*Center(
+              child:*/ Text("Welcome to Find my Doctor",
                   style: TextStyle(
                       fontFamily: 'Open Sans', fontWeight: FontWeight.bold)),
-            ),
+            // ),
           ),
           body: Center(
             child: Column(
@@ -48,7 +49,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                           primary: kBGColor,
                           onPrimary: kPrimaryLightColor,
-                          fixedSize: const Size(250, 40),
+                          fixedSize: const Size(300, 40),
                           elevation: 2,
                           shape: (RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.0),

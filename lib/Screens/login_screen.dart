@@ -9,6 +9,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: kBGColor,
         elevation: 0,
+        centerTitle: true,
         // automaticallyImplyLeading: false,
         title: Image.asset(
           'assests/icons/logoLight.png',
