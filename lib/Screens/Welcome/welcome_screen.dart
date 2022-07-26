@@ -1,6 +1,7 @@
 //<a href="https://lovepik.com/images/png-doctor-cartoon.html">Doctor Cartoon Png vectors by Lovepik.com</a>
 import 'package:findyourdoctor/Screens/home/home_screen.dart';
-import 'package:findyourdoctor/Screens/login_screen.dart';
+import 'package:findyourdoctor/Screens/login/login_screen.dart';
+import 'package:findyourdoctor/Screens/signin/signup_screen.dart';
 import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -86,7 +87,9 @@ class WelcomeScreen extends StatelessWidget {
                       Expanded(
                         flex: 7,
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>SignupScreen()));
+                            },
                             style: ElevatedButton.styleFrom(
                                 primary: kBGColor,
                                 onPrimary: kPrimaryLightColor,
