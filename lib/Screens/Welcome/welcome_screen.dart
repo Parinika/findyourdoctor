@@ -85,7 +85,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       Spacer(),
                       Expanded(
-                        flex: 7,
+                        flex: 6,
                         child: ElevatedButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(

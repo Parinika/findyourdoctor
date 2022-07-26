@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Find your Doctor',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: lightBG,
       ),
       home: const WelcomeScreen(),
     );
