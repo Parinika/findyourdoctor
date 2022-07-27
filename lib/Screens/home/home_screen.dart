@@ -1,9 +1,14 @@
 import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:findyourdoctor/Screens/login/login_screen.dart';
+import 'package:http/http.dart' as http;
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  State<StatefulWidget> createState() => _HomeState();
+}
+
+class _HomeState extends State<HomeScreen> {
+  // const _HomeState({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -118,35 +123,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      // body: Padding(
-      //   padding: const EdgeInsets.all(16.0),
-      //   child: SingleChildScrollView(
-      //     child: Column(
-      //         // crossAxisAlignment: CrossAxisAlignment.center,
-      //         mainAxisSize: MainAxisSize.max,
-      //         mainAxisAlignment: MainAxisAlignment.start,
-      //         children: <Widget>[
-      //           Text(
-      //             'Hi, Guest \nWelcome',
-      //             style: TextStyle(color: Colors.blueGrey, fontSize: 30.0),
-      //             textAlign: TextAlign.left,
-      //           ),
-      //           // TextField(
-      //           //   onChanged: (value) {
-      //           //     //  x = x.where((i) => x.contains(value))
-      //           //   },
-      //           //   decoration: InputDecoration(
-      //           //     hintText: "Search",
-      //           //     hintStyle: TextStyle(
-      //           //       color: kPrimaryColor.withOpacity(0.5),
-      //           //     ),
-      //           //     enabledBorder: InputBorder.none,
-      //           //     focusedBorder: InputBorder.none,
-      //           //   ),
-      //           // ),
-      //         ]),
-      //   ),
-      // )
       body: Container(
         // decoration: BoxDecoration(
         //   color:lightBG,
@@ -154,166 +130,167 @@ class HomeScreen extends StatelessWidget {
         //     topRight:Radius.circular(30),
         //   )
         // ),
-        child:SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-                    width: size.width,
-                    child: Text(
-                      "Hi Guest,",
-                      style: TextStyle(
-                        fontSize: 25.0,
-                        color: textcolor,
-                        fontFamily: 'Roboto',
-                      ),
-                    ),
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                width: size.width,
+                child: Text(
+                  "Hi,",
+                  style: TextStyle(
+                    fontSize: 25.0,
+                    color: textcolor,
+                    fontFamily: 'Roboto',
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 5, left: 20, right: 20),
-                    width: size.width,
-                    child: Text(
-                      "Welcome Back",
-                      style: TextStyle(
-                        fontSize: 28.0,
-                        color: textcolor,
-                        fontFamily: 'Roboto',
-                      ),
-                    ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 5, left: 20, right: 20),
+                width: size.width,
+                child: Text(
+                  "Welcome Back",
+                  style: TextStyle(
+                    fontSize: 28.0,
+                    color: textcolor,
+                    fontFamily: 'Roboto',
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20, left: 15, right: 15),
-                    decoration: BoxDecoration(
-                        color: tacolor,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x140000000),
-                            offset: Offset(0, 10),
-                            blurRadius: 15,
-                            spreadRadius: 0,
-                          )
-                        ]),
-                    height: 60,
-                    width: size.width,
-                    child: Row(children: [
-                      Expanded(
-                        flex: 5,
-                        child: Container(
-                            margin: EdgeInsets.only(left: 10, right: 10),
-                            child: TextField(
-                              maxLines: 1,
-                              autofocus: false,
-                              style: TextStyle(
-                                color: kPrimaryLightColor,
-                                fontSize: 20,
-                              ),
-                              decoration: InputDecoration(
-                                  border: InputBorder.none, hintText: "Search"),
-                            )),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                            decoration: BoxDecoration(
-                              color: kBGColor,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Icon(
-                                Icons.search,
-                                color: lightBG,
-                                size: 25,
-                              ),
-                            )),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 15, right: 15),
+                decoration: BoxDecoration(
+                    color: tacolor,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color(0x140000000),
+                        offset: Offset(0, 10),
+                        blurRadius: 15,
+                        spreadRadius: 0,
                       )
                     ]),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: 20, left: 20, right: 20),
-                    width: size.width,
-                    child: Text(
-                      "Categories",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: textcolor,
-                        fontFamily: 'Roboto',
-                      ),
-                    ),
-                  ),
-                  SingleChildScrollView(
+                height: 60,
+                width: size.width,
+                child: Row(children: [
+                  Expanded(
+                    flex: 5,
                     child: Container(
-                      height: 450,
-                      margin: EdgeInsets.only(top: 20, left: 15, right: 15),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          // scrollDirection: Axis.vertical,
-                          children: <Widget>[
-                            Padding(
-                              padding: EdgeInsets.only(top: 15.0, left: 10.0),
-                            ),
-                            Row(
-                              children: [
-                                demoCategories("assests/icons/brain.png",
-                                    "Neurologist", "8 Doctors"),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                demoCategories("assests/icons/bone.png",
-                                    "Orthopedist", "10 Doctors"),
-                              ],
-                            ),
+                        margin: EdgeInsets.only(left: 10, right: 10),
+                        child: TextField(
+                          maxLines: 1,
+                          autofocus: false,
+                          style: TextStyle(
+                            color: textcolor,
+                            fontSize: 18,
+                          ),
+                          decoration: InputDecoration(
+                              border: InputBorder.none, hintText: "Search"),
+                        )
+                        ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: kBGColor,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Center(
+                          child: Icon(
+                            Icons.search,
+                            color: lightBG,
+                            size: 25,
+                          ),
+                        )),
+                  )
+                ]),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 20, left: 20, right: 20),
+                width: size.width,
+                child: Text(
+                  "Categories",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: textcolor,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              SingleChildScrollView(
+                child: Container(
+                  height: 450,
+                  margin: EdgeInsets.only(top: 20, left: 15, right: 15),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      // scrollDirection: Axis.vertical,
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(top: 15.0, left: 10.0),
+                        ),
+                        Row(
+                          children: [
+                            demoCategories("assests/icons/brain.png",
+                                "Neurologist", "8 Doctors"),
                             SizedBox(
-                              height: 10.0,
+                              width: 10.0,
                             ),
-                            Row(
-                              children: [
-                                demoCategories("assests/icons/eye.png",
-                                    "Ophthalmologist", "15 Doctors"),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                demoCategories("assests/icons/gynecologist.png",
-                                    "Gynecologist", "9 Doctors"),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Row(
-                              children: [
-                                demoCategories("assests/icons/psychologist.png",
-                                    "Psychologist", "12 Doctors"),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                demoCategories("assests/icons/heart.png",
-                                    "Cardiologist", "11 Doctors"),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Row(
-                              children: [
-                                demoCategories("assests/icons/tooth.png",
-                                    "Dentist", "17 Doctors"),
-                                SizedBox(
-                                  width: 10.0,
-                                ),
-                                demoCategories("assests/icons/doctor.png",
-                                    "See All", "87 Doctors"),
-                              ],
-                            ),
+                            demoCategories("assests/icons/bone.png",
+                                "Orthopedist", "10 Doctors"),
                           ],
                         ),
-                      ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Row(
+                          children: [
+                            demoCategories("assests/icons/eye.png",
+                                "Ophthalmologist", "15 Doctors"),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            demoCategories("assests/icons/gynecologist.png",
+                                "Gynecologist", "9 Doctors"),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Row(
+                          children: [
+                            demoCategories("assests/icons/psychologist.png",
+                                "Psychologist", "12 Doctors"),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            demoCategories("assests/icons/heart.png",
+                                "Cardiologist", "11 Doctors"),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        Row(
+                          children: [
+                            demoCategories("assests/icons/tooth.png", "Dentist",
+                                "17 Doctors"),
+                            SizedBox(
+                              width: 10.0,
+                            ),
+                            demoCategories("assests/icons/doctor.png",
+                                "See All", "87 Doctors"),
+                          ],
+                        ),
+                      ],
                     ),
-                  )
-                ],
-              ),
-            ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

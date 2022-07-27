@@ -94,40 +94,109 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ),
                 Container(
+                  
                   margin: EdgeInsets.only(top: 20, left: 15, right: 15),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        fillColor: lightBG,
-                        filled: true,
-                        hintText: 'Name',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                  ),
+                  decoration: BoxDecoration(
+                      color: tacolor,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x140000000),
+                          offset: Offset(0, 10),
+                          blurRadius: 15,
+                          spreadRadius: 0,
+                        )
+                      ]),
+                  height: 60,
+                  width: size.width,
+                  child: Row(children: [
+                    Expanded(
+                      flex: 5,
+                      child: Container(
+                        margin: EdgeInsets.only(left: 10, right: 10),
+                        child: TextField(
+                          maxLines: 1,
+                          autofocus: false,
+                          style: TextStyle(
+                            color: textcolor,
+                            fontSize: 18,
+                          ),
+                          decoration: InputDecoration(
+                              border: InputBorder.none, hintText: "Name"),
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
                 Container(
+                  
                   margin: EdgeInsets.only(top: 20, left: 15, right: 15),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        fillColor: lightBG,
-                        filled: true,
-                        hintText: 'Email',
-                        focusedBorder: InputBorder. none,
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            )
-                            ),
-                  ),
+                  decoration: BoxDecoration(
+                      color: tacolor,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x140000000),
+                          offset: Offset(0, 10),
+                          blurRadius: 15,
+                          spreadRadius: 0,
+                        )
+                      ]),
+                  height: 60,
+                  width: size.width,
+                  child: Row(children: [
+                    Expanded(
+                      flex: 5,
+                      child: Container(
+                        margin: EdgeInsets.only(left: 10, right: 10),
+                        child: TextField(
+                          maxLines: 1,
+                          autofocus: false,
+                          style: TextStyle(
+                            color: textcolor,
+                            fontSize: 18,
+                          ),
+                          decoration: InputDecoration(
+                              border: InputBorder.none, hintText: "Email"),
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
                 Container(
+                  
                   margin: EdgeInsets.only(top: 20, left: 15, right: 15),
-                  child: TextField(
-                    decoration: InputDecoration(
-                        fillColor: lightBG,
-                        filled: true,
-                        hintText: 'Password',
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                  ),
+                  decoration: BoxDecoration(
+                      color: tacolor,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color(0x140000000),
+                          offset: Offset(0, 10),
+                          blurRadius: 15,
+                          spreadRadius: 0,
+                        )
+                      ]),
+                  height: 60,
+                  width: size.width,
+                  child: Row(children: [
+                    Expanded(
+                      flex: 5,
+                      child: Container(
+                        margin: EdgeInsets.only(left: 10, right: 10),
+                        child: TextField(
+                          maxLines: 1,
+                          autofocus: false,
+                          style: TextStyle(
+                            color: textcolor,
+                            fontSize: 18,
+                          ),
+                          decoration: InputDecoration(
+                              border: InputBorder.none, hintText: "Password"),
+                        ),
+                      ),
+                    ),
+                  ]),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20, left: 15, right: 15),
