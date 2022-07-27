@@ -154,11 +154,8 @@ class HomeScreen extends StatelessWidget {
         //     topRight:Radius.circular(30),
         //   )
         // ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            SingleChildScrollView(
+        child:SingleChildScrollView(
+              scrollDirection: Axis.vertical,
               child: Column(
                 children: [
                   Container(
@@ -317,8 +314,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
       ),
     );
   }
