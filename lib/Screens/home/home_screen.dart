@@ -2,6 +2,14 @@ import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:findyourdoctor/Screens/login/login_screen.dart';
 import 'package:http/http.dart' as http;
+import 'package:findyourdoctor/Screens/dr_list/neurologist_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/bone_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/cardio_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/dentist_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/eye_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/gynae_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/psyco_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/seeall_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   State<StatefulWidget> createState() => _HomeState();
@@ -187,8 +195,7 @@ class _HomeState extends State<HomeScreen> {
                           ),
                           decoration: InputDecoration(
                               border: InputBorder.none, hintText: "Search"),
-                        )
-                        ),
+                        )),
                   ),
                   Expanded(
                     flex: 1,
@@ -232,13 +239,37 @@ class _HomeState extends State<HomeScreen> {
                         ),
                         Row(
                           children: [
-                            demoCategories("assests/icons/brain.png",
-                                "Neurologist", "8 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => NeurologistScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories("assests/icons/brain.png",
+                                    "Neurologist", "8 Doctors"),
+                              ),
+                            ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            demoCategories("assests/icons/bone.png",
-                                "Orthopedist", "10 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BoneScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories("assests/icons/bone.png",
+                                    "Orthopedist", "10 Doctors"),
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -246,13 +277,39 @@ class _HomeState extends State<HomeScreen> {
                         ),
                         Row(
                           children: [
-                            demoCategories("assests/icons/eye.png",
-                                "Ophthalmologist", "15 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => EyeScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories("assests/icons/eye.png",
+                                    "Ophthalmologist", "15 Doctors"),
+                              ),
+                            ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            demoCategories("assests/icons/gynecologist.png",
-                                "Gynecologist", "9 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => GynaeScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories(
+                                    "assests/icons/gynecologist.png",
+                                    "Gynecologist",
+                                    "9 Doctors"),
+                              ),
+                            )
                           ],
                         ),
                         SizedBox(
@@ -260,13 +317,39 @@ class _HomeState extends State<HomeScreen> {
                         ),
                         Row(
                           children: [
-                            demoCategories("assests/icons/psychologist.png",
-                                "Psychologist", "12 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PsycoScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories(
+                                    "assests/icons/psychologist.png",
+                                    "Psychologist",
+                                    "12 Doctors"),
+                              ),
+                            ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            demoCategories("assests/icons/heart.png",
-                                "Cardiologist", "11 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => CardioScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories("assests/icons/heart.png",
+                                    "Cardiologist", "11 Doctors"),
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -274,13 +357,39 @@ class _HomeState extends State<HomeScreen> {
                         ),
                         Row(
                           children: [
-                            demoCategories("assests/icons/tooth.png", "Dentist",
-                                "17 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => DentistScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories("assests/icons/tooth.png",
+                                    "Dentist", "17 Doctors"),
+                              ),
+                            ),
                             SizedBox(
                               width: 10.0,
                             ),
-                            demoCategories("assests/icons/doctor.png",
-                                "See All", "87 Doctors"),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SeeAllScreen(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                child: demoCategories(
+                                    "assests/icons/doctor.png",
+                                    "See All",
+                                    "87 Doctors"),
+                              ),
+                            ),
                           ],
                         ),
                       ],

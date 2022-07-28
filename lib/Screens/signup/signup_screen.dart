@@ -79,7 +79,7 @@ class SignupScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 60.0,
+                  height: 35.0,
                 ),
                 Container(
                   width: size.width,
@@ -92,6 +92,9 @@ class SignupScreen extends StatelessWidget {
                       fontFamily: 'Roboto',
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 15.0,
                 ),
                 Container(
                   

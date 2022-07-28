@@ -143,7 +143,7 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 60.0,
+                  height: 35.0,
                 ),
                 Container(
                   width: size.width,
@@ -156,6 +156,9 @@ class LoginScreen extends StatelessWidget {
                       fontFamily: 'Roboto',
                     ),
                   ),
+                ),
+                SizedBox(
+                  height: 20.0,
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20, left: 15, right: 15),
