@@ -25,119 +25,65 @@ class NeurologistState extends State<NeurologistScreen> {
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(10.0)),
         ),
       ),
-      body: Container(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(children: [
-            Expanded(
-                child: Container(
-              margin: EdgeInsets.only(left: 20, right: 20),
-              child: ListView(
-                children: [
-                  demoTopRatedDr(
-                    "assests/images/dr_1.png",
-                    "Dr.Fred Mask",
-                    "Heart Surgon",
-                    "4.1",
-                    "",
-                    context,
-                  ),
-                ],
-              ),
-            ))
-          ]),
-        ),
-      ),
-    );
-  }
-}
-  Widget demoTopRatedDr(String img, String name, String speciality,
-      String rating, String distance,BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Container(
-      child: Container(
-        height: 90,
-        margin: EdgeInsets.only(top: 10),
-        decoration: BoxDecoration(
-          color: lightBG,
-          borderRadius: BorderRadius.circular(5),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+      drawer: Drawer(
+        backgroundColor: lightBG,
+        child: ListView(
+          padding: EdgeInsets.zero,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 20),
-              height: 90,
-              width: 50,
-              child: Image.asset(img),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 20, top: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: Text(
-                      name,
-                      style: TextStyle(
-                        color: lightBG,
-                        fontSize: 17,
-                        fontFamily: 'Roboto',
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
+            const SizedBox(
+              height: 200.0,
+              child: const UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  color: kBGColor,
+                ),
+                accountName: Text(
+                  "Parinika Jain",
+                  style: TextStyle(
+                    color: lightBG,
+                    fontSize: 17.0,
                   ),
-                  Container(
-                    margin: EdgeInsets.only(top: 10),
-                    child: Row(
-                      children: [
-                        Text(
-                          name,
-                          style: TextStyle(
-                            color: lightBG,
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        Container(
-                          margin:
-                              EdgeInsets.only(top: 3, left: size.width * 0.25),
-                          child: Row(
-                            children: [
-                              Container(
-                                child: Text(
-                                  "Rating: ",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 12,
-                                    fontFamily: 'Roboto',
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                child: Text(
-                                  rating,
-                                  style: TextStyle(
-                                    color: lightBG,
-                                    fontSize: 12,
-                                    fontFamily: 'Roboto',
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                ),
+                accountEmail: Text(
+                  "abc@gmail.com",
+                  style: TextStyle(
+                    color: lightBG,
+                    fontSize: 17.0,
                   ),
-                ],
+                ),
+                currentAccountPicture: Icon(
+                  Icons.account_circle,
+                  size: 75.0,
+                ),
               ),
+            ),
+            ListTile(
+              title: const Text(
+                'Item 1',
+                style: TextStyle(color: kPrimaryColor, fontSize: 18.0),
+                textAlign: TextAlign.center,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text(
+                'Item 2',
+                style: TextStyle(color: kPrimaryColor, fontSize: 18.0),
+                textAlign: TextAlign.center,
+              ),
+              onTap: () {
+                Navigator.pop(context);
+              },
             ),
           ],
         ),
       ),
+      body: Container(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [])))      
     );
   }
+}

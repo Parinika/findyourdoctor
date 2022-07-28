@@ -1,7 +1,6 @@
 import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:findyourdoctor/Screens/login/login_screen.dart';
-import 'package:http/http.dart' as http;
 import 'package:findyourdoctor/Screens/dr_list/neurologist_screen.dart';
 import 'package:findyourdoctor/Screens/dr_list/bone_screen.dart';
 import 'package:findyourdoctor/Screens/dr_list/cardio_screen.dart';
@@ -178,43 +177,46 @@ class _HomeState extends State<HomeScreen> {
                         blurRadius: 15,
                         spreadRadius: 0,
                       )
-                    ]),
+                    ]
+                  ),
                 height: 60,
                 width: size.width,
-                child: Row(children: [
-                  Expanded(
-                    flex: 5,
-                    child: Container(
-                        margin: EdgeInsets.only(left: 10, right: 10),
-                        child: TextField(
-                          maxLines: 1,
-                          autofocus: false,
-                          style: TextStyle(
-                            color: textcolor,
-                            fontSize: 18,
-                          ),
-                          decoration: InputDecoration(
-                              border: InputBorder.none, hintText: "Search"),
-                        )),
-                        )
-                        ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: kBGColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.search,
-                            color: lightBG,
-                            size: 25,
-                          ),
-                        )),
-                  )
-                ]]),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 5,
+                      child: Container(
+                          margin: EdgeInsets.only(left: 10, right: 10),
+                          child: TextField(
+                            maxLines: 1,
+                            autofocus: false,
+                            style: TextStyle(
+                              color: textcolor,
+                              fontSize: 18,
+                            ),
+                            decoration: InputDecoration(
+                                border: InputBorder.none, hintText: "Search"),
+                          )),
+                    ),
+                //   ],
+                // ),
+              Expanded(
+                flex: 1,
+                child: Container(
+                    decoration: BoxDecoration(
+                      color: kBGColor,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.search,
+                        color: lightBG,
+                        size: 25,
+                      ),
+                    )),
+              ),
+              ],
+              ),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20, left: 20, right: 20),
@@ -241,7 +243,6 @@ class _HomeState extends State<HomeScreen> {
                         ),
                         Row(
                           children: [
-<<<<<<< HEAD
                             InkWell(
                               onTap: () {
                                 Navigator.push(
@@ -293,27 +294,9 @@ class _HomeState extends State<HomeScreen> {
                                 child: demoCategories("assests/icons/eye.png",
                                     "Ophthalmologist", "15 Doctors"),
                               ),
-=======
-                            demoCategories("assests/icons/brain.png",
-                                "Neurologist", "8 Doctors"),
-                            SizedBox(
-                              width: 10.0,
->>>>>>> 9df64f48286a9d9dcad1d5af803c215b66dd24fe
                             ),
-                            demoCategories("assests/icons/bone.png",
-                                "Orthopedist", "10 Doctors"),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          children: [
-                            demoCategories("assests/icons/eye.png",
-                                "Ophthalmologist", "15 Doctors"),
                             SizedBox(
                               width: 10.0,
-<<<<<<< HEAD
                             ),
                             InkWell(
                               onTap: () {
@@ -353,24 +336,10 @@ class _HomeState extends State<HomeScreen> {
                                     "Psychologist",
                                     "12 Doctors"),
                               ),
-=======
->>>>>>> 9df64f48286a9d9dcad1d5af803c215b66dd24fe
                             ),
-                            demoCategories("assests/icons/gynecologist.png",
-                                "Gynecologist", "9 Doctors"),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.0,
-                        ),
-                        Row(
-                          children: [
-                            demoCategories("assests/icons/psychologist.png",
-                                "Psychologist", "12 Doctors"),
                             SizedBox(
                               width: 10.0,
                             ),
-<<<<<<< HEAD
                             InkWell(
                               onTap: () {
                                 Navigator.push(
@@ -385,10 +354,6 @@ class _HomeState extends State<HomeScreen> {
                                     "Cardiologist", "11 Doctors"),
                               ),
                             ),
-=======
-                            demoCategories("assests/icons/heart.png",
-                                "Cardiologist", "11 Doctors"),
->>>>>>> 9df64f48286a9d9dcad1d5af803c215b66dd24fe
                           ],
                         ),
                         SizedBox(
@@ -396,7 +361,6 @@ class _HomeState extends State<HomeScreen> {
                         ),
                         Row(
                           children: [
-<<<<<<< HEAD
                             InkWell(
                               onTap: () {
                                 Navigator.push(
@@ -429,27 +393,19 @@ class _HomeState extends State<HomeScreen> {
                                     "See All",
                                     "87 Doctors"),
                               ),
-=======
-                            demoCategories("assests/icons/tooth.png", "Dentist",
-                                "17 Doctors"),
-                            SizedBox(
-                              width: 10.0,
->>>>>>> 9df64f48286a9d9dcad1d5af803c215b66dd24fe
                             ),
-                            demoCategories("assests/icons/doctor.png",
-                                "See All", "87 Doctors"),
                           ],
                         ),
                       ],
                     ),
                   ),
                 ),
-              )
+              ),
             ],
-          ),
-        ),
-      ),
-    );
+          ), //column
+        ), // singlechild scroll
+      ), //body
+    ); //scaffold
   }
 }
 
