@@ -1,13 +1,16 @@
 import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:findyourdoctor/Screens/home/home_screen.dart';
+import 'package:findyourdoctor/Screens/login/login_screen.dart';
 
-class NeurologistScreen extends StatefulWidget {
-  State<StatefulWidget> createState() => NeurologistState();
+
+class EyeScreen extends StatefulWidget {
+  State<StatefulWidget> createState() => EyeState();
 }
+class EyeState extends State<EyeScreen>{
 
-class NeurologistState extends State<NeurologistScreen> {
   @override
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
@@ -17,6 +20,7 @@ class NeurologistState extends State<NeurologistScreen> {
         backgroundColor: kBGColor,
         elevation: 0,
         centerTitle: true,
+        // automaticallyImplyLeading: false,
         title: Image.asset(
           'assests/icons/logoLight.png',
           scale: 5.0,
@@ -24,6 +28,25 @@ class NeurologistState extends State<NeurologistScreen> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(10.0)),
         ),
+        actions: [
+          IconButton(
+            constraints: BoxConstraints.expand(width: 80),
+            icon: Text(
+              'Login',
+              textAlign: TextAlign.center,
+            ),
+            onPressed: () { 
+              Navigator.pushReplacement(
+                  context,
+                  PageRouteBuilder(
+                    pageBuilder: (context, animation1, animation2) =>
+                        LoginScreen(),
+                    transitionDuration: Duration.zero,
+                    reverseTransitionDuration: Duration.zero,
+                  ));
+            },
+          ),
+        ],
       ),
       drawer: Drawer(
         backgroundColor: lightBG,
@@ -96,10 +119,9 @@ class NeurologistState extends State<NeurologistScreen> {
             ],
           ),
         ),
-      ),      
+      ),
     );
   }
-
 
 
 Widget demoTopRatedDr(String img, String name, String address,

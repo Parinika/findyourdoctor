@@ -106,7 +106,115 @@ class DentistState extends State<DentistScreen>{
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
-            children: [])))
+            children: [
+              demoTopRatedDr("assests/images/femaledr.jpg", "Dr. Zac Wolff", "Address123", "4.4", ""),
+              demoTopRatedDr("assests/images/maledoctor.png", "Dr. Fred Mask", "Address123", "4.3", ""),
+              demoTopRatedDr("assests/images/maledr.jfif", "Dr. Zac Wolff", "Address123", "4.4", ""),
+              demoTopRatedDr("assests/images/femaledr.jpg", "Dr. Fred Mask", "Address123", "4.3", ""),
+              demoTopRatedDr("assests/images/femaledr.jpg", "Dr. Zac Wolff", "Address123", "4.4", ""),
+              demoTopRatedDr("assests/images/maledoctor.png", "Dr. Fred Mask", "Address123", "4.3", ""),
+              demoTopRatedDr("assests/images/maledr.jfif", "Dr. Zac Wolff", "Address123", "4.4", ""),
+              demoTopRatedDr("assests/images/femaledr.jpg", "Dr. Fred Mask", "Address123", "4.3", ""),
+              demoTopRatedDr("assests/images/femaledr.jpg", "Dr. Fred Mask", "Address123", "4.3", "")
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+
+Widget demoTopRatedDr(String img, String name, String address,
+      String rating, String distance) {
+    var size = MediaQuery.of(context).size;
+    return Container(
+      // onTap: () {
+      //   Navigator.push(context, MaterialPageRoute(builder: (context) => DoctorDetailPage()));
+      // },
+      child: Container(
+        height: 90,
+        // width: size.width,
+        margin: EdgeInsets.only(top: 10),
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 255, 255),
+          borderRadius: BorderRadius.circular(5),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(left: 20),
+              height: 90,
+              width: 50,
+              child: Image.asset(img),
+            ),
+            Container(
+              margin: EdgeInsets.only(left: 20, top: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Text(
+                      name,
+                      style: TextStyle(
+                        color: kPrimaryColor,
+                        fontSize: 17,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    child: Row(
+                      children: [
+                        Text(
+                          address,
+                          style: TextStyle(
+                            color: kPrimaryColor,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 3, left: size.width * 0.30),
+                          child: Row(
+                            children: [
+                              Container(
+                                child: Text(
+                                  "Rating: ",
+                                  style: TextStyle(
+                                    color: kPrimaryColor,
+                                    fontSize: 12,
+                                    fontFamily: 'Roboto',
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  rating,
+                                  style: TextStyle(
+                                    color: kPrimaryColor,
+                                    fontSize: 12,
+                                    fontFamily: 'Roboto',
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

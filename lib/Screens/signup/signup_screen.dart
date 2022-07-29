@@ -194,6 +194,7 @@ class SignupScreen extends StatelessWidget {
                             color: textcolor,
                             fontSize: 18,
                           ),
+                          obscureText: true,
                           decoration: InputDecoration(
                               border: InputBorder.none, hintText: "Password"),
                         ),

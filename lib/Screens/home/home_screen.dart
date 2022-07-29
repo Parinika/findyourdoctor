@@ -2,12 +2,12 @@ import 'package:findyourdoctor/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:findyourdoctor/Screens/login/login_screen.dart';
 import 'package:findyourdoctor/Screens/dr_list/neurologist_screen.dart';
-import 'package:findyourdoctor/Screens/dr_list/bone_screen.dart';
-import 'package:findyourdoctor/Screens/dr_list/cardio_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/orthopedic_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/cardiologist_screen.dart';
 import 'package:findyourdoctor/Screens/dr_list/dentist_screen.dart';
-import 'package:findyourdoctor/Screens/dr_list/eye_screen.dart';
-import 'package:findyourdoctor/Screens/dr_list/gynae_screen.dart';
-import 'package:findyourdoctor/Screens/dr_list/psyco_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/opthalmologist_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/gynecologist_screen.dart';
+import 'package:findyourdoctor/Screens/dr_list/psychologist_screen.dart';
 import 'package:findyourdoctor/Screens/dr_list/seeall_screen.dart';
 
 class HomeScreen extends StatefulWidget {
